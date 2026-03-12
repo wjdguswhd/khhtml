@@ -77,6 +77,63 @@
         #border-test9{border-style: ridge;}
         #border-test10{border-style: solid; border-width: 10px;}
 
+        .space{background: beige;width: 100px; height: 100px;}
+        #padding1{padding:10px;}
+        #padding2{padding-top: 10px; padding-left: 10px;}
+        #margin1{margin:50px;}
+        #margin2{margin-top:50px; margin-left: 100px;}
+
+        .positioning{border: 1px solid black;}
+        .outer{position: relative;}
+        #first{width: 300px; height: 300px; background: yellow;}
+        #second{
+            width: 200px;height: 200px;background: yellowgreen;
+            position: absolute; top:50px; left:50px;
+        }
+        #third{
+            width: 100px;height: 100px;background: red;
+            position: absolute; top:100px; left: 100px;
+        }
+       /* #fixed-area{width: 100px; height: 100px;background: blue; position: fixed;}*/
+        
+       .visibility{width: 100px; height: 100px; border: 1px solid black;}
+       #v-test1{background: orange;}
+       #v-test2{background: olivedrab; /*visibility: hidden;*/ display: none;}
+       #v-test3{background: navy;}
+
+       .z-wrap{width: auto; height: 210px; position: relative;}
+       .z-test{width:150px;height: 100px; border: 1px solid black;position: absolute;}
+       #z1{background: yellow; top: 100px; left: 100px; z-index:10;}
+       #z2{background: green; top: 50px; left: 50px; z-index:1;}
+       #z3{background: red; top: 10px;left:10px;}
+
+       .float-test{border: 1px solid black; width: 100px; height: 50px; float: right;}
+
+       .column-wrap{border:1px solid black; height: 300px; overflow: scroll;}
+       #column1{column-width: 300px; column-gap: 50px;}
+       #column2{column-count: 6;column-rule-style: dashed; column-rule-color: darkorange;}
+       #colum2>h5{column-span: all;}
+
+       table{
+        caption-side: bottom;
+        border: 1px solid black;
+        width: 300px;
+        table-layout: fixed;
+        word-break: break-all;
+        height: 400px;
+        /* border-collapse: collapse;*/
+       border-collapse: separate;
+       border-spacing: 50px 50px;
+       empty-cells: hide;
+       }
+       td{
+        border: 1px solid black;
+        width: 80px;
+        text-align: center;
+        height: 100px;
+        vertical-align: top;
+       }
+
     </style>
 </head>
 <body>
@@ -189,12 +246,12 @@
     <h2>여백 스타일</h2>
     <!-- 3-1. padding -->
     <h3>padding</h3>
-    <p>________________의 거리 조절</p>
+    <p>테두리와 콘텐츠 영역 사이의 거리 조절</p>
     <pre>   - 선택자{padding: 숫자;}</pre>
     <!-- 3-2. margin -->
     <h3>margin</h3>
-    <p>________________간의 간격을 조절하는 속성</p>
-    <pre>   - 선택자{margin}: 숫자;}</pre>
+    <p>요소들 간의 간격을 조절하는 속성</p>
+    <pre>   - 선택자{margin: 숫자;}</pre>
 
     <h4>기준 div</h4>
     <div class="space">콘텐츠 영역</div>
@@ -251,6 +308,8 @@
     <div class="float-test" id="f3">333</div>
     <div class="float-test" id="f4">444</div>
     <div class="float-test" id="f5">555</div>
+
+    <br clear="all">
 
     <hr>
     <hr>
