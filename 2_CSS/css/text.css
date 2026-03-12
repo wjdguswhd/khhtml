@@ -49,5 +49,35 @@
 #spacing1{letter-spacing: 10px;}
 #spacing2{word-spacing: 10px;}
 
+#d1{direction: ltr;}
+#d2{direction: rtl;}
 
+#ta1{text-align:left;}
+#ta2{text-align: right;}
+#ta3{text-align: center;}
+#ta4{text-align: justify;}
+
+#ti{text-indent: 100px;}
+
+#lh1{line-height: normal;}
+#lh2{line-height: 50px;}
+
+.overflow-class{background: beige;width: 500px;}
+.overflow-class>p{white-space: nowrap; overflow: hidden;}
+#to1{text-overflow: clip;}
+#to2{text-overflow: ellipsis;}
+
+#default-bullet{list-style-type: disc;}
+#circle-bullet{list-style-type: circle;}
+#square-bullet{list-style-type: square;}
+#none-bullet{list-style-type: none;}
+
+#default-number{list-style-type: decimal;}
+#zero-number{list-style-type: decimal-leading-zero;}
+#lower-rome-number{list-style-type: lower-roman;}
+#upper-rome-number{list-style-type: upper-roman;}
+#lower-alpha{list-style-type: lower-alpha;}
+#upper-alpha{list-style-type: upper-alpha;}
+
+#image-bullet{list-style-image: url(../sample/image/iconsample.PNG);}
 
