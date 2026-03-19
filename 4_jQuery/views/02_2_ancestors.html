@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-4.0.0.min.js"></script>
+    <style>
+        .wrap *{border: 1px solid lightgray; display:block; padding:5px; margin:15px;}
+        .type{width:500px;}
+    </style>
+</head>
+<body>
+    <h1>객체 탐색</h1>
+    <h2>탐색 메소드</h2>
+    <h3>Ancestors 메소드</h3>
+    <div class="wrap">
+        <div class="type">div (great-grandparent)
+            <ul>ul (gradnparent)
+                <li>li (direct aprent)
+                    <span>span</span>
+                </li>
+            </ul>
+        </div>
+        <div class="type">div (grandparent)
+            <p>p (direct parent)
+              <span>span</span>
+            </p>
+         </div>
+    </div>
+    <script>
+        $(()=>{
+            $('span').parent().css({'color':'red','border':'2px solid red'});
+            $('span').parents('ul').css({'color':'blue','border':'2px solid blue'});
+            $('span').parentsUntil('div').css('background','beige');
+
+            const spans = document.getElementsByTagName('span')
+            for(const span of spans){
+                span.parentElement.style.border = '2px solid green';
+            }
+        })
+    </script>
+</body>
+</html>
