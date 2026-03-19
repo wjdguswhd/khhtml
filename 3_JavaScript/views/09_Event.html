@@ -162,14 +162,14 @@
             // 같지 않으면 "비밀번호가 다릅니다" 알림창 뜨며 제출x
            
             const password = document.getElementById("password").value;            
-            const passwordConfrim = document.getElementById("passwordConfrim").value;            
+            const passwordConfirm = document.getElementById("passwordConfirm").value;            
 
-            if(password==passwordConfrim){
+            if(password==passwordConfirm){
                 alert('비밀번호 일치합니다.');
                 return true;
             }else{
                 alert('비밀번호가 다릅니다.');
-                document.getElementById('passwordConfrim').select();
+                document.getElementById('passwordConfirm').select();
                 return false;
             }
         }
