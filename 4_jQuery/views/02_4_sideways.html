@@ -42,6 +42,7 @@
             $('h4').prevUntil('p').css('border','double');
         })
     </script>
+
     <h2>객체 탐색 테스트</h2>
     <table border="1">
         <tr>
@@ -68,12 +69,63 @@
     <label>선택한 게시물 : </label>
     <label id="selectName"></label> /
     <label id="selectAge"></label> /
-    <label id="selecHobby"></label>
+    <label id="selectHobby"></label>
+
     <script>
         //표 내용 중 하나를 클릭하면 해당 행의 정보가 아래 출력되게 하기.
-        //jQuery ver.
+        $(()=>{
+        //1.jQuery ver.
+        //1-1. tr클릭
+        // $('tr').click(function(){
+        //     // console.log($(this)); //tr
+        //     // console.log($(this).children('td'));
+        //     const tdNodes = $(this).children('td') //0이름td, 1나이td, 2취미td
+        //     //console.log(tdNodes.eq(0));
+        //     //console.log(tdNodes[0].innerText);
+        //     const nameText = tdNodes.eq(0).text(); //tdNodes[0]도 가능하나 얘는 요소로 반환(js문법사용)
+        //     const ageText = tdNodes.eq(1).text();
+        //     const hobbyText = tdNoes.eq(2).text();
 
-        //javascript ver.
+        //     $('#selectName').text(nameText);
+        //     $('#selectAge').text(ageText);
+        //     $('#selectHobby').text(hobbyText);
+        // });
+
+        //1-2. td클릭
+        // $('td').click((e)=>{
+        //     // console.log($(e.target));
+        //     const trNodes = $(e.target).parent();
+        //     // console.log(trNodes);
+        //     const tds = trNodes.children();
+        //     const nameText = tds.eq(0).text();
+        //     const ageText = tds.eq(1).text();
+        //     const hobbyText = tds.eq(2).text();
+
+        //     $('#selectName').text(nameText);
+        //     $('#selectAge').text(ageText);
+        //     $('#selectHobby').text(hobbyText);
+        // });
+
+        //javascript ver. : td클릭
+        const tdArr = document.getElementsByTagName('td');
+        // console.log(tdArr);
+        for(const td of tdArr){
+            td.onclick=e=>{
+                // console.log(e.target);
+                const tr = e.target.parentElement;
+                // console.log(tr);
+                const tds = tr.children;
+                // console.log(tds);
+                const name = tds[0].innerText;
+                const age = tds[1].innerText;
+                const hobby = tds[2].innerText;
+
+                document.getElementById('selectName').innerText = name;
+                document.getElementById('selectAge').innerText = age;
+                document.getElementById('selectHobby').innerText = hobby;
+            }
+        }
+    })
     </script>
 </body>
 </html>

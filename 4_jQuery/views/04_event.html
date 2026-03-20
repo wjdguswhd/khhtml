@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-4.0.0.min.js"></script>
+    <style>
+        .test{
+            width: 150px; height: 50px; border: 1px solid black; text-align: center;
+            display:table-cell; vertical-align: middle;
+        }
+        .outer{width: 100px; height: 50px; background: powderblue; padding: 30px;}
+        .inner{width: 100%; height: 100%; background: white;}
+    </style>
+</head>
+<body>
+    <h1>이벤트</h1>
+    <h2>이벤트 연결 종류</h2>
+    <h3>on()와 off()</h3>
+    <div id="onOff" class="test">기본 상태</div>
+    <script>
+        $(()=>{
+            $('#onOff').on('click',()=>{
+                console.log('click이벤트를 on()으로 연결');
+            });
+
+            $('#onOff').on({'mouseenter':(e)=>{
+                $(e.target).css('background','beige').text('마우스 올라감');
+            },'mouseleave':function(){
+                $(this).css('background','powderblue').text('마우스 내려감');
+            },'click':e=>{
+                $(e.target).off('mouseenter').off('mouseleave').css('background','white').text('기본 상태');
+            }});
+        })
+    </script>
+
+    <h2>이벤트 종류</h2>
+    <h3>마우스 이벤트</h3>
+    <h4>mouseover/mouseout(), mouseenter/mouseleave()</h4>
+    <div class="outer" id="mouseEvent1">
+        <div class="inner"></div>
+    </div>
+    <br/>
+    <div class="outer" id="mouseEvent2">
+        <div class="inner"></div>
+    </div>
+    <script>
+        $(()=>{
+            $('#mouseEvent1').on('mouseover',function(){
+                console.log($(this).attr('id') + ' over!');
+            });
+            $('#mouseEvent1').mouseout(function(){
+                console.log($(this).attr('id') + ' out!');
+            });
+            $('#mouseEvent2').mouseenter(function(){
+                console.log($(this).attr('id') + ' enter!');
+            });
+            $('#mouseEvent2').on('mouseleave',function(){
+                console.log($(this).attr('id') + ' leave!');
+            });
+        });
+    </script>
+</body>
+</html>
